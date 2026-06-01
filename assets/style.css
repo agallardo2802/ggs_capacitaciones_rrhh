@@ -3,6 +3,7 @@
   --navy2:    #1E3A8A;
   --blue:     #2563EB;
   --blue-dk:  #1D4ED8;
+  --teal:     #00B4C8;
   --amber:    #F59E0B;
   --amber-lt: #FCD34D;
   --bg:       #F1F5FB;
@@ -10,6 +11,8 @@
   --text:     #111827;
   --muted:    #6B7280;
   --border:   #E5E7EB;
+
+  --max-w:  min(80vw, 1600px);
 
   --r-sm: 8px;
   --r-md: 14px;
@@ -51,10 +54,10 @@ a { text-decoration: none; color: inherit; }
 }
 
 .navbar-inner {
-  max-width: 1200px;
+  max-width: var(--max-w);
   margin: 0 auto;
-  padding: 0 32px;
-  height: 60px;
+  padding: 0 40px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -63,26 +66,13 @@ a { text-decoration: none; color: inherit; }
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--navy);
-  letter-spacing: -0.01em;
+  gap: 0;
 }
 
-.brand-mark {
-  width: 34px;
-  height: 34px;
-  background: var(--navy);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: 800;
-  font-size: 0.68rem;
-  letter-spacing: 0.05em;
-  flex-shrink: 0;
+.brand-logo {
+  height: 44px;
+  width: auto;
+  display: block;
 }
 
 .nav-links {
@@ -110,7 +100,7 @@ a { text-decoration: none; color: inherit; }
 .hero {
   background: var(--navy);
   color: #fff;
-  padding: 104px 32px 112px;
+  padding: 104px 40px 112px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -187,7 +177,7 @@ a { text-decoration: none; color: inherit; }
 .program-hero {
   background: var(--navy);
   color: #fff;
-  padding: 52px 32px 64px;
+  padding: 52px 40px 64px;
   position: relative;
   overflow: hidden;
 }
@@ -202,7 +192,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .program-hero-inner {
-  max-width: 1200px;
+  max-width: var(--max-w);
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -280,9 +270,9 @@ a { text-decoration: none; color: inherit; }
    MAIN CONTENT
 ════════════════════════════════════════════ */
 .main-content {
-  max-width: 1200px;
+  max-width: var(--max-w);
   margin: 0 auto;
-  padding: 60px 32px 80px;
+  padding: 60px 40px 80px;
 }
 
 .section-header { margin-bottom: 36px; }
@@ -572,18 +562,17 @@ footer strong { color: rgba(255,255,255,0.7); }
 /* ════════════════════════════════════════════
    RESPONSIVE
 ════════════════════════════════════════════ */
-@media (max-width: 680px) {
-  .navbar-inner { padding: 0 18px; }
+@media (max-width: 860px) {
+  :root { --max-w: 96vw; }
+  .navbar-inner { padding: 0 20px; }
   .nav-links { display: none; }
-  .hero { padding: 72px 20px 80px; }
-  .program-hero { padding: 36px 20px 48px; }
-  .main-content { padding: 40px 20px 56px; }
+  .hero { padding: 72px 24px 80px; }
+  .program-hero { padding: 36px 24px 48px; }
+  .main-content { padding: 40px 24px 56px; }
   .programs-grid,
   .modules-grid { grid-template-columns: 1fr; }
-  .program-stats {
-    width: 100%;
-    border-radius: 10px;
-  }
+  .program-stats { width: 100%; border-radius: 10px; }
   .stat { padding: 14px 20px; }
   .stat-value { font-size: 1.6rem; }
+  .brand-logo { height: 36px; }
 }
